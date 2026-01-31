@@ -1,290 +1,333 @@
-
 # 🌱 GreenChain
 
-**A Decentralized Sustainability Rewards Platform**
-
-GreenChain is a Web3-powered platform that **rewards eco-friendly actions** with blockchain-based incentives.
-It combines **smart contracts, NFTs, governance, and gamification** to create a transparent, verifiable impact ledger for sustainability.
+**Decentralized Sustainability Rewards & Governance Platform (Cardano)**
 
 ---
 
-## 🚀 Vision
+## 📌 Overview
 
-> Make sustainable actions **measurable, verifiable, and rewarding** using decentralized technology.
+**GreenChain** is a hybrid **Web2 + Web3** platform built on **Cardano** that rewards sustainable actions, issues NFTs, and enables community governance through wallet-based voting.
 
-Unlike typical DeFi or gaming dApps, GreenChain focuses on **real-world environmental impact**, aligning financial incentives with social good.
+The project integrates:
 
----
-
-## 🧠 Core Concept
-
-GreenChain functions as a **blockchain-based loyalty and rewards ecosystem**:
-
-* Users perform eco-friendly actions
-* Actions are verified by trusted entities or oracles
-* Smart contracts issue **GreenTokens** as rewards
-* Tokens unlock economic and governance value
+* **Cardano wallets (Lace)**
+* **Lucid SDK**
+* **Blockfrost API**
+* **PHP + MySQL backend**
+* **Hybrid off-chain governance with on-chain anchoring**
 
 ---
 
-## 🏗️ System Architecture
+## 📚 Table of Contents
+
+1. [Features](#-features)
+2. [Architecture](#-architecture)
+3. [Technology Stack](#-technology-stack)
+4. [Repository Structure](#-repository-structure)
+5. [Wallet Integration](#-wallet-integration)
+6. [On-Chain Components](#-on-chain-components)
+7. [Off-Chain Components](#-off-chain-components)
+8. [Governance System](#-governance-system)
+9. [NFT System](#-nft-system)
+10. [Database Schema](#-database-schema)
+11. [Security Model](#-security-model)
+12. [Environment Setup](#-environment-setup)
+13. [Future Improvements](#-future-improvements)
+14. [License](#-license)
+
+---
+
+## ✨ Features
+
+* ✅ User authentication (PHP sessions)
+* ✅ Lace wallet connection (Lucid)
+* ✅ Real ADA balance display
+* ✅ ADA send & receive
+* ✅ GreenToken (GRT) rewards
+* ✅ NFT badges for sustainability actions
+* ✅ DAO-style governance
+* ✅ Wallet-signed voting
+* ✅ On-chain proposal anchoring
+* ✅ NFT-gated voting
+* ✅ Transaction history
+
+---
+
+## 🏗 Architecture
 
 ```
-Frontend (Web App)
- ├── Dashboard (Impact, Tokens, NFTs)
- ├── Action Submission (Proof Upload)
- ├── Marketplace & Rewards
- └── Governance (Voting)
-
-Backend (PHP / API Layer)
- ├── User & Action Records
- ├── Verification Status
- └── Oracle / Admin Interface
-
-Blockchain Layer
- ├── GreenToken (ERC-20 / Native Token)
- ├── NFT Carbon Offsets (ERC-721 / CIP-25)
- └── Governance Smart Contracts
+Browser (UI)
+ ├── HTML / CSS / JS
+ ├── wallet.js (Lucid)
+ │
+ ├── PHP API Layer
+ │   ├── Auth
+ │   ├── Wallet sync
+ │   ├── Governance logic
+ │   └── Transaction logging
+ │
+ ├── MySQL Database
+ │
+ └── Cardano Blockchain (Preprod)
+     ├── Wallet signing
+     ├── ADA transfers
+     ├── Metadata anchoring
+     └── NFT ownership
 ```
 
 ---
 
-## 🔄 How It Works
-
-### 1️⃣ Proof of Action
-
-Users submit evidence of eco-friendly activities such as:
-
-* Recycling receipts
-* Solar panel installation certificates
-* EV charging logs
-* Energy usage reports
-
-Proofs can be uploaded via:
-
-* URL
-* File upload
-* IPFS (future extension)
-
----
-
-### 2️⃣ Verification Layer
-
-Eco-actions are verified through:
-
-* Trusted validators (NGOs, partners)
-* Oracle services
-* DAO-approved verifiers
-
-Each action is marked as:
-
-* `Pending`
-* `Verified`
-* `Rejected`
-
----
-
-### 3️⃣ Smart Contract Rewards
-
-Once verified:
-
-* Smart contracts automatically mint **GreenTokens**
-* Tokens are sent directly to the user’s wallet
-* All transactions are **immutable and transparent**
-
----
-
-### 4️⃣ Marketplace & Utility
-
-GreenTokens can be used to:
-
-* Redeem discounts at eco-friendly businesses
-* Donate to environmental NGOs
-* Trade on decentralized exchanges (DEXs)
-* Stake for governance power
-
----
-
-### 5️⃣ Gamification
-
-To increase engagement:
-
-* Leaderboards for top contributors
-* Achievement badges
-* NFT milestones (e.g., *100kg Recycled NFT*)
-* Reputation scores
-
----
-
-## ✨ Unique Features
-
-### 🌍 NFT Carbon Offsets
-
-* NFTs represent verified carbon savings
-* Each NFT includes:
-
-  * Action metadata
-  * Timestamp
-  * Carbon offset value
-* NFTs can be:
-
-  * Traded
-  * Donated
-  * Displayed in user profiles
-
----
-
-### 🗳️ Community Governance
-
-GreenToken holders can vote on:
-
-* Which sustainability projects get funded
-* Reward parameters
-* New verifier approvals
-* Protocol upgrades
-
-Governance is fully on-chain.
-
----
-
-### 🔎 Transparency by Design
-
-* Every eco-action is recorded on-chain
-* Public impact ledger
-* Verifiable history of environmental contributions
-* Audit-friendly smart contracts
-
----
-
-## 🖥️ Tech Stack
+## 🧰 Technology Stack
 
 ### Frontend
 
-* HTML, CSS, JavaScript
-* Responsive, Web3-inspired UI
-* Wallet integration ready
+* HTML5
+* CSS3
+* Vanilla JavaScript
+* ES Modules
 
 ### Backend
 
-* PHP
+* PHP 8+
 * MySQL
-* REST-style architecture
+* REST-style APIs
 
 ### Blockchain
 
-* Ethereum / Cardano / EVM-compatible chains
-* Smart contracts (ERC-20 / ERC-721)
-* IPFS (planned)
+* Cardano (Preprod)
+* Lucid SDK
+* Blockfrost API
+* Lace Wallet
 
 ---
 
-## 📂 Repository Structure
+## 🗂 Repository Structure
 
 ```
 greenchain/
-├── index.php                # Main dashboard
+│
 ├── assets/
-│   ├── css/                 # Styles
-│   └── js/                  # Frontend logic
-├── backend/
-│   ├── db.php               # Database connection
-│   ├── submit_action.php    # Action submission logic
-│   └── verify_action.php    # Verification logic
-├── contracts/               # Smart contracts (future)
-└── README.md
+│   ├── css/
+│   │   ├── dashboard.css
+│   │   ├── governance.css
+│   │   └── main.css
+│   │
+│   └── js/
+│       ├── wallet.js          # Wallet connection & ADA logic
+│       ├── governance.js      # Voting power & governance logic
+│       ├── dashboard.js
+│       └── marketplace.js
+│
+├── api/                        # OFF-CHAIN API LAYER
+│   ├── auth/
+│   │   ├── login.php
+│   │   └── register.php
+│   │
+│   ├── save_wallet.php
+│   ├── get_dashboard.php
+│   ├── get_voting_power.php
+│   ├── submit_vote.php
+│   ├── anchor_proposal.php
+│   └── get_transactions.php
+│
+├── onchain/                    # ON-CHAIN LOGIC (Lucid)
+│   ├── proposals/
+│   │   └── anchorProposal.js
+│   ├── voting/
+│   │   └── signVote.js
+│   └── nfts/
+│       └── checkOwnership.js
+│
+├── database/
+│   ├── schema.sql
+│   └── seed.sql
+│
+├── auth/
+│   ├── login.php
+│   ├── register.php
+│   └── logout.php
+│
+├── dashboard.php
+├── governance.php
+├── marketplace.php
+├── nfts.php
+├── index.php
+│
+├── config/
+│   └── db.php
+│
+├── README.md
+└── .env.example
 ```
 
 ---
 
-## ⚙️ Installation & Setup
+## 🔑 Wallet Integration
 
-### Prerequisites
+### Supported Wallet
 
-* PHP 8+
-* MySQL
-* XAMPP / WAMP / LAMP
-* Web browser
+* **Lace**
 
-### Steps
+### Core Wallet Features
 
-```bash
-git clone https://github.com/your-username/greenchain.git
-cd greenchain
+* Persistent connection across pages
+* Safe signing (no private keys exposed)
+* ADA balance via UTXO scan
+* Transaction submission
+
+```js
+lucid.selectWallet(api);
+window.lucid = lucid;
 ```
 
-1. Place the project in:
+---
 
-   ```
-   htdocs/greenchain
-   ```
-2. Import the database schema
-3. Start Apache & MySQL
-4. Open:
+## ⛓ On-Chain Components
 
-   ```
-   http://localhost/greenchain
-   ```
+### 1️⃣ ADA Transactions
+
+* Built & signed client-side
+* Submitted via Lucid
+* Hash stored off-chain
+
+### 2️⃣ Proposal Anchoring
+
+* Proposal content hashed
+* Hash stored as Cardano metadata
+* Tx hash saved to DB
+
+### 3️⃣ Vote Signing
+
+* Wallet signs vote payload
+* Signature stored for verification
+
+### 4️⃣ NFT Ownership
+
+* NFT policy ID checked in wallet UTXOs
+* Used for gated voting
 
 ---
 
-## 🔐 Wallet Integration (Planned)
+## 🖥 Off-Chain Components
 
-* MetaMask
-* WalletConnect
-* Cardano wallets (Nami, Lace)
+### PHP APIs
 
----
+* Wallet persistence
+* Voting power calculation
+* Governance records
+* Transaction history
+* User rewards & NFTs
 
-## 🛣️ Roadmap
+### Why Hybrid?
 
-### Phase 1 – MVP ✅
-
-* Dashboard UI
-* Action submission
-* Verification flow
-* Token simulation
-
-### Phase 2 – Blockchain Integration
-
-* GreenToken smart contract
-* NFT minting
-* Wallet login
-
-### Phase 3 – DAO & Marketplace
-
-* Governance voting
-* Partner marketplace
-* Token staking
-
-### Phase 4 – Scale & Partnerships
-
-* NGO partnerships
-* Carbon credit integrations
-* Enterprise APIs
+* Faster UX
+* Lower fees
+* On-chain integrity preserved
 
 ---
 
-## 🤝 Contributing
+## 🏛 Governance System
 
-We welcome contributions!
+### Voting Power Formula
 
-1. Fork the repo
-2. Create a feature branch
-3. Commit your changes
-4. Submit a pull request
+```
+Voting Power =
+  ADA × 1
++ GreenToken × 10
++ NFT × 50
+```
+
+### Governance Model
+
+* Wallet-authenticated
+* NFT-gated
+* Signed votes
+* On-chain anchored proposals
 
 ---
 
-## 📜 License
+## 🏆 NFT System
 
-MIT License
-You are free to use, modify, and distribute this project.
+* NFTs represent verified sustainability actions
+* Stored on Cardano
+* Used for:
+
+  * Voting eligibility
+  * Voting power boosts
+  * Community reputation
 
 ---
 
-## 🌱 Why GreenChain Matters
+## 🗄 Database Schema (Core)
 
-GreenChain proves that **blockchain can be used for real-world good**, not just speculation.
-It creates a bridge between **environmental responsibility and economic incentives**, empowering individuals to make a measurable impact.
+### users
+
+* id
+* email
+* green_balance
+* wallet_address
+* role
+
+### proposals
+
+* id
+* title
+* description
+* proposal_hash
+* onchain_tx
+
+### votes
+
+* proposal_id
+* wallet_address
+* vote
+* signature
+
+### nfts
+
+* user_id
+* policy_id
+* asset_name
+
+---
+
+## 🔐 Security Model
+
+* ✅ No private keys stored
+* ✅ Wallet-signed transactions
+* ✅ Prepared SQL statements
+* ✅ Session-based authentication
+* ✅ On-chain integrity anchoring
+
+---
+
+## ⚙ Environment Setup
+
+1. Install XAMPP
+2. Import database schema
+3. Add Blockfrost API key
+4. Use Cardano **Preprod**
+5. Open in HTTPS (required for wallets)
+
+---
+
+## 🚀 Future Improvements
+
+* Smart contract treasury
+* On-chain voting (CIP-1694)
+* NFT staking
+* Mainnet deployment
+* DAO proposal execution
+
+---
+
+## 🌱 Final Note
+
+GreenChain demonstrates a **real-world Cardano dApp architecture**, combining:
+
+* Sustainability incentives
+* NFTs
+* DAO governance
+* Secure wallet interactions
 
 ---
