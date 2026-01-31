@@ -1,0 +1,208 @@
+:root {
+  --green-gradient: linear-gradient(135deg, #2ecc71, #27ae60);
+  --blue-gradient: linear-gradient(135deg, #0072ff, #00c6ff);
+  --card-bg: #ffffff;
+  --soft-bg: #f4fdf7;
+  --text-dark: #2c3e50;
+  --text-muted: #6c757d;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+  --radius-lg: 18px;
+}
+
+body {
+  background: var(--soft-bg);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: var(--text-dark);
+}
+
+/* MARKETPLACE LAYOUT */
+.marketplace-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.marketplace-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.marketplace-header h1 {
+  font-size: 2.6rem;
+  background: var(--green-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.marketplace-header p {
+  max-width: 650px;
+  margin: 15px auto 0;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* GRID */
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.market-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.market-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.market-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.market-card-content {
+  padding: 22px;
+}
+
+.market-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.market-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+}
+
+.market-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.market-price {
+  font-weight: 700;
+  color: #27ae60;
+}
+
+.market-btn {
+  background: var(--green-gradient);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.market-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(46,204,113,0.4);
+}
+
+/* WALLET STATUS */
+.wallet-status {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.wallet-status span {
+  font-weight: 600;
+  color: #27ae60;
+}
+
+/* NAVBAR – FULL WIDTH */
+.navbar {
+  width: 100%;
+  padding: 18px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e6eee9;
+}
+
+/* LOGO */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0b2e1a;
+}
+
+/* NAV LINKS CENTERED */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1f2937;
+  transition: color 0.25s ease;
+}
+
+/* ACTIVE + HOVER */
+.nav-links li a:hover {
+  color: #22c55e;
+}
+
+.nav-links li a.active {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* CONNECT WALLET BUTTON */
+.wallet-btn {
+  background: #22c55e;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.wallet-btn:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+.navbar {
+  position: relative;
+}
+
+/* CENTER NAV LINKS PERFECTLY */
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
